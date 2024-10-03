@@ -11,3 +11,5 @@ docker push 344174879645.dkr.ecr.us-east-1.amazonaws.com/test-python-app:latest
 
 # Desplegar en Kubernetes
 kubectl apply -f deployment.yaml -n devel-tvu-oat
+kubectl apply -f deployment.yaml -n taxpro #prueba de despliegue del ambiente demo-cluster
+    kubectl delete -f deployment.yaml -n monitor

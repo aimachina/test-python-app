@@ -11,7 +11,7 @@ from opentelemetry.instrumentation.logging import LoggingInstrumentor
 # Configure the OpenTelemetry tracer provider and the OTLP exporter
 resource = Resource.create(attributes={"service.name": "test-python-app"})
 provider = TracerProvider(resource=resource)
-otlp_exporter = OTLPSpanExporter(endpoint="http://tempo.devel-tvu-oat.svc.cluster.local:4317", insecure=True)
+otlp_exporter = OTLPSpanExporter(endpoint="http://tempo.monitor.svc.cluster.local:4317", insecure=True)
 span_processor = BatchSpanProcessor(otlp_exporter)
 provider.add_span_processor(span_processor)
 trace.set_tracer_provider(provider)
